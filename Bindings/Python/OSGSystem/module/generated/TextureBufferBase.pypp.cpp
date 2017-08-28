@@ -48,7 +48,6 @@ void register_TextureBufferBase_class(){
         bp::scope().attr("TextureFieldId") = (int)OSG::TextureBufferBase::TextureFieldId;
         bp::scope().attr("TexTargetFieldId") = (int)OSG::TextureBufferBase::TexTargetFieldId;
         bp::scope().attr("LevelFieldId") = (int)OSG::TextureBufferBase::LevelFieldId;
-        bp::scope().attr("ZoffsetFieldId") = (int)OSG::TextureBufferBase::ZoffsetFieldId;
         bp::scope().attr("NextFieldId") = (int)OSG::TextureBufferBase::NextFieldId;
         { //::OSG::TextureBufferBase::copyFromBin
         
@@ -185,16 +184,6 @@ void register_TextureBufferBase_class(){
                 , bp::return_internal_reference< >() );
         
         }
-        { //::OSG::TextureBufferBase::getSFZoffset
-        
-            typedef ::OSG::SFUInt32 const * ( ::OSG::TextureBufferBase::*getSFZoffset_function_type )(  ) const;
-            
-            TextureBufferBase_exposer.def( 
-                "getSFZoffset"
-                , getSFZoffset_function_type( &::OSG::TextureBufferBase::getSFZoffset )
-                , bp::return_internal_reference< >() );
-        
-        }
         { //::OSG::TextureBufferBase::getTexTarget
         
             typedef ::GLenum const & ( ::OSG::TextureBufferBase::*getTexTarget_function_type )(  ) const;
@@ -235,15 +224,6 @@ void register_TextureBufferBase_class(){
                 , bp::return_internal_reference< >() );
         
         }
-        { //::OSG::TextureBufferBase::getZoffset
-        
-            typedef ::OSG::UInt32 ( ::OSG::TextureBufferBase::*getZoffset_function_type )(  ) const;
-            
-            TextureBufferBase_exposer.def( 
-                "getZoffset"
-                , getZoffset_function_type( &::OSG::TextureBufferBase::getZoffset ) );
-        
-        }
         { //::OSG::TextureBufferBase::setLevel
         
             typedef void ( ::OSG::TextureBufferBase::*setLevel_function_type )( ::OSG::UInt32 const ) ;
@@ -271,16 +251,6 @@ void register_TextureBufferBase_class(){
             TextureBufferBase_exposer.def( 
                 "setTexture"
                 , setTexture_function_type( &::OSG::TextureBufferBase::setTexture )
-                , ( bp::arg("value") ) );
-        
-        }
-        { //::OSG::TextureBufferBase::setZoffset
-        
-            typedef void ( ::OSG::TextureBufferBase::*setZoffset_function_type )( ::OSG::UInt32 const ) ;
-            
-            TextureBufferBase_exposer.def( 
-                "setZoffset"
-                , setZoffset_function_type( &::OSG::TextureBufferBase::setZoffset )
                 , ( bp::arg("value") ) );
         
         }
