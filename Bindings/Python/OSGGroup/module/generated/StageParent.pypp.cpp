@@ -106,7 +106,7 @@ struct StageHandlerMixin_less__OSG_scope_ContainerMixinHead_less__OSG_scope_Stag
 void register_StageParent_class(){
 
     { //::OSG::StageHandlerMixin< OSG::ContainerMixinHead< OSG::StageDesc > >
-        typedef bp::class_< StageHandlerMixin_less__OSG_scope_ContainerMixinHead_less__OSG_scope_StageDesc__greater___greater__wrapper, boost::noncopyable > StageParent_exposer_t;
+        typedef bp::class_< StageHandlerMixin_less__OSG_scope_ContainerMixinHead_less__OSG_scope_StageDesc__greater___greater__wrapper, bp::bases< OSG::TraversalValidationHandlerMixin< OSG::ContainerMixinHead< OSG::StageDesc > > >, boost::noncopyable > StageParent_exposer_t;
         StageParent_exposer_t StageParent_exposer = StageParent_exposer_t( "StageParent", bp::no_init );
         bp::scope StageParent_scope( StageParent_exposer );
         bp::enum_< OSG::StageHandlerMixin<OSG::ContainerMixinHead<OSG::StageDesc> >::GroupMode>("GroupMode")
