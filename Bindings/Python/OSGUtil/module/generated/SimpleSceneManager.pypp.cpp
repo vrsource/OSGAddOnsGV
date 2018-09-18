@@ -466,7 +466,7 @@ struct SimpleSceneManager_wrapper : OSG::SimpleSceneManager, bp::wrapper< OSG::S
 void register_SimpleSceneManager_class(){
 
     { //::OSG::SimpleSceneManager
-        typedef bp::class_< SimpleSceneManager_wrapper, bp::bases< OSG::NavigationManager >, boost::noncopyable > SimpleSceneManager_exposer_t;
+        typedef bp::class_< SimpleSceneManager_wrapper, bp::bases< OSG::NavigationManager >, OSG::SimpleSceneManager::ObjRefPtr, boost::noncopyable > SimpleSceneManager_exposer_t;
         SimpleSceneManager_exposer_t SimpleSceneManager_exposer = SimpleSceneManager_exposer_t( "SimpleSceneManager", bp::no_init );
         bp::scope SimpleSceneManager_scope( SimpleSceneManager_exposer );
         { //::OSG::SimpleSceneManager::addForeground
@@ -909,6 +909,9 @@ void register_SimpleSceneManager_class(){
         
         }
         SimpleSceneManager_exposer.staticmethod( "create" );
+
+        pyopensg::register_transit<OSG::SimpleSceneManager, OSG::SimpleSceneManager::ObjRefPtr>::execute();
+        bp::implicitly_convertible<OSG::SimpleSceneManager::ObjRefPtr, OSG::SimpleSceneManager*>();
     }
 
 }
