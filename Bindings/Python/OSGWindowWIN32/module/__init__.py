@@ -34,7 +34,7 @@ except:
    pass
 
 # Import everything from the opensg module
-from OSGWindowWIN32Py import *
+from .OSGWindowWIN32Py import *
 
 if original_dlopen_flags:
    sys.setdlopenflags(original_dlopen_flags)
@@ -47,7 +47,7 @@ def _fc_cmp(self, other):
       id_self = self.getId()
    if not other is None:
       id_other = other.getId()
-      
+
    return cmp(id_self, id_other)
 
 def _fc_hash(self):
@@ -56,7 +56,7 @@ def _fc_hash(self):
    else:
       return self.getId()
 
-for (n,c) in OSGWindowWIN32Py.__dict__.iteritems():
+for (n,c) in OSGWindowWIN32Py.__dict__.items():
   if isinstance(c,type) and (AttachmentContainer in c.__mro__):
     c.__cmp__  = _fc_cmp
     c.__hash__ = _fc_hash
